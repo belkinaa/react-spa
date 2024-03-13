@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.App{
+    width: 800px;
+}
+
+.work {
+    display: flex;
+    border: 1px solid teal;
+    margin-top: 1px;
+    align-items: stretch;
+    flex-flow: row nowrap;
+
+
+
+    height: 100%;
+}
+
+.work__row {
+    width: 25%;
+    display: flex;
+    padding: 5px 15px;
+    font-size: 14px;
+    background: transparent;
+    border: 1px solid teal;
+}
+
+.work__row_head{
+    width: 25%;
+    background-color: #4ec0d4;
+    display: flex;
+    padding: 5px 15px;
+    font-size: 18px;
+    border: 1px solid teal;
+    font-weight: bold;
+}

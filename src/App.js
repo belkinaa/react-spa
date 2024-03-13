@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import './styles/App.css';
+import JournalList from "./components/JournalList";
+import JournalForm from "./components/JournalForm";
 
 function App() {
+
+  const [works, setWorks] = useState([
+      {id: 0, workNumber: 'Номер', status: 'Статус', responsible: 'Ответственный', eventWork: 'Мероприятие'},
+      {id: 1, workNumber: 'XXX-F', status: 'подготовлено', responsible: 'Петров П.П.', eventWork: 'Бетонирование коллон'},
+      {id: 2, workNumber: 'XXX-A', status: 'исполнено', responsible: 'Сидоров С.И', eventWork: 'Обмазочная гидроизоляция'},
+      {id: 3, workNumber: 'XXX-G', status: 'в работе', responsible: 'Николаев А.А.', eventWork: 'Бетонная подготовка'}
+  ])
+
+
+    const createWork = (newWork) => {
+        setWorks([...works, newWork])
+    }
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <JournalList works={works} title="Список работ"/>
+    <JournalForm create={createWork}/>
+
     </div>
   );
 }
